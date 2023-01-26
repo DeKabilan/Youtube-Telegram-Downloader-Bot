@@ -1,8 +1,6 @@
 from pytube import YouTube
 import pyshorteners
-from dotenv import load_dotenv
 import os
-load_dotenv(".env")
 apkey=os.getenv("apkey")
 apkey="4f05b12112626b8960b71013d87d28767b62e57d"
 
