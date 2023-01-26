@@ -14,7 +14,7 @@ def send_welcome(message):
 
 @bot.message_handler(func=lambda msg: msg)
 def sendlink(message):
-    if ".youtu" in message.text:
+    if "youtu" in message.text:
         bot.reply_to(message,download(message.text,"720p"))
     else:
         bot.reply_to(message,"Link is Invalid")
