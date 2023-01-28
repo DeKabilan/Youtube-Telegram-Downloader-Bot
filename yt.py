@@ -1,8 +1,11 @@
 from pytube import YouTube
 import pyshorteners
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 apkey=os.getenv("apkey")
-apkey="4f05b12112626b8960b71013d87d28767b62e57d"
 
 
 
@@ -21,4 +24,3 @@ def download(link,reso):
         return dl
     else:
         return "Resolution Not Found"
-
