@@ -22,7 +22,7 @@ def send_welcome(message):
 @bot.message_handler(func=lambda msg: msg)
 def sendres(message):
     link=message.text
-    if "youtu" and ".com" in message.text:
+    if "youtu" in message.text:
         bot.delete_message(message.chat.id,message.message_id)
         bot.send_message(message.chat.id,link,reply_markup= markup_inline())
     else:
