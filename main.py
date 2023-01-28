@@ -41,11 +41,8 @@ def callback_query(call):
     if call.data == "1080p":
         bot.delete_message(call.message.chat.id,call.message.message_id)
         dlres="1080p"
-        print(link)
-        print(dlres)
-        dl=bot.send_message(call.message.chat.id,link,dlres)
-        ans=bot.send_message(call.message.chat.id,download(link,dlres))
-        print(ans)
+        dl=bot.send_message(call.message.chat.id,"Downloading . . .")
+        bot.send_message(call.message.chat.id,download(link,dlres))
         bot.delete_message(call.message.chat.id,dl.id)
     if call.data == "240p":
         bot.delete_message(call.message.chat.id,call.message.message_id)
