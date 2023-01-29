@@ -1,4 +1,4 @@
-# Youtube-Telegram-Downloader_Bot
+# Youtube-Telegram-Downloader-Bot
  <p>This bot won't have any updates but will be hosted forever. Thank You!<p>
  <br>
  <br>
