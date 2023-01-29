@@ -36,40 +36,24 @@ def callback_query(call):
         bot.delete_message(call.message.chat.id,call.message.message_id)
         dlres="720p"
         dl=bot.send_message(call.message.chat.id,"Downloading . . .")
-        bot.send_message(call.message.chat.id,download(link,dlres))
-        bot.delete_message(call.message.chat.id,dl.id)
-    if call.data == "1080p":
-        bot.delete_message(call.message.chat.id,call.message.message_id)
-        dlres="1080p"
-        dl=bot.send_message(call.message.chat.id,"Downloading . . .")
-        bot.send_message(call.message.chat.id,download(link,dlres))
-        bot.delete_message(call.message.chat.id,dl.id)
-    if call.data == "240p":
-        bot.delete_message(call.message.chat.id,call.message.message_id)
-        dlres="240p"
-        dl=bot.send_message(call.message.chat.id,"Downloading . . .")
-        bot.send_message(call.message.chat.id,download(link,dlres))
+        download(link,dlres)
+        video = open('download.mp4','rb')
+        bot.send_video(call.message.chat.id,video)
         bot.delete_message(call.message.chat.id,dl.id)
     if call.data == "360p":
         bot.delete_message(call.message.chat.id,call.message.message_id)
         dlres="360p"
         dl=bot.send_message(call.message.chat.id,"Downloading . . .")
-        bot.send_message(call.message.chat.id,download(link,dlres))
-        bot.delete_message(call.message.chat.id,dl.id)
-    if call.data == "480p":
-        bot.delete_message(call.message.chat.id,call.message.message_id)
-        dlres="480p"
-        dl=bot.send_message(call.message.chat.id,"Downloading . . .")
-        bot.send_message(call.message.chat.id,download(link,dlres))
+        download(link,dlres)
+        video = open('download.mp4','rb')
+        bot.send_video(call.message.chat.id,video)
         bot.delete_message(call.message.chat.id,dl.id)
     return dlres
 
 def markup_inline():
     markup = InlineKeyboardMarkup()
     markup.width = 2
-    markup.add(InlineKeyboardButton("1080p", callback_data="1080p"))
     markup.add(InlineKeyboardButton("720p", callback_data="720p"))
-    markup.add(InlineKeyboardButton("480p", callback_data="480p"))
     markup.add(InlineKeyboardButton("360p", callback_data="360p"))
 
     return markup

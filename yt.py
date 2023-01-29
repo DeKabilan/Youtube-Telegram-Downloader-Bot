@@ -1,26 +1,16 @@
 from pytube import YouTube
-import pyshorteners
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
-apkey=os.getenv("apkey")
-
 
 
 def download(link,reso):
 
     res=[]
     video = YouTube(link)
-    for stream in video.streams:
+    for stream in video.streams.filter(type="video", audio_codec="mp4a.40.2"):
         if stream.resolution!=None:
             res.append(stream.resolution)
     res=set(res)
     if reso in res:
-        downloads = video.streams.filter(progressive="True", file_extension="mp4", res=reso).first().url
-        s = pyshorteners.Shortener(api_key=apkey)
-        dl=(s.bitly.short(downloads))
-        return dl
+        downloads = video.streams.filter(type="video", audio_codec="mp4a.40.2" , resolution=reso).first().download(filename='download.mp4')
+        return downloads
     else:
         return "Resolution Not Found"
