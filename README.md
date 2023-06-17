@@ -1,5 +1,5 @@
 # Youtube-Telegram-Downloader-Bot
- <p>This bot won't have any updates but will be hosted forever. Thank You!<p>
+ <p>Due to lack of update in PyTube Community this bot is terminated Forever<p>
  <br>
  <br>
  <a href="https://t.me/ytubedl_tele_bot">Link to the bot<a>
